@@ -1,11 +1,10 @@
-
 name: Build and Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build_and_test:
@@ -22,7 +21,7 @@ jobs:
         run: npm ci
       - name: Start the App
         run: npm run start &
-      - name: Install Playwright Browsers
-        run: npx playwright install
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install
       - name: Execute the initial tests
         run: npm run test
